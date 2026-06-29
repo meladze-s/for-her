@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Экран 1: Логин -->
+    <div id="screen-login" class="screen active">
+        <h2>Привет! Введи кодовое слово:</h2>
+        <input type="text" id="password-input" placeholder="Например, дата знакомства...">
+        <button onclick="checkPassword()">Войти</button>
+    </div>
+
+    <!-- Экран 2: Главное меню -->
+    <div id="screen-menu" class="screen">
+        <h2>Главное меню</h2>
+        <button onclick="showScreen('screen-quiz')">🎮 Играть в Квиз</button>
+        <button onclick="alert('Тут будут твои комплименты!')">❤️ Комплименты</button>
+    </div>
+
+    <!-- Экран 3: Мини-игра -->
+    <div id="screen-quiz" class="screen">
+        <h2>Мини-Квиз</h2>
+        <p>Где было наше первое свидание?</p>
+        <button onclick="quizAnswer(true)">В кафе</button>
+        <button onclick="quizAnswer(false)">В парке</button>
+        <button class="back-btn" onclick="showScreen('screen-menu')">⬅️ Назад</button>
+    </div>
+
+    <script href="script.js"></script>
+    <script>
+        // Регистрация PWA сервис-воркера
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
