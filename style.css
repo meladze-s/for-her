@@ -1,32 +1,84 @@
+/* Базовые настройки экрана */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ffe6e6;
+    /* Нежный, мягкий градиент от теплого пастельно-красного к деликатному розовому */
+    background: linear-gradient(315deg, #f26473 0%, #f48c96 50%, #f7b5bc 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
 }
+
+/* Стеклянные карточки экранов */
 .screen {
-    display: none; /* Все экраны скрыты по умолчанию */
+    display: none; /* Прячем по умолчанию */
     flex-direction: column;
     gap: 15px;
+    /* Уютный полупрозрачный белый фон */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px); /* Размытие заднего фона */
+    -webkit-backdrop-filter: blur(15px); /* Для iOS Safari */
+    border-radius: 28px;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Очень мягкая, едва заметная тень */
+    box-shadow: 0 12px 32px 0 rgba(242, 100, 115, 0.2);
+    color: white; /* Текст белый и контрастный */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Легкая тень под текстом для читаемости */
 }
+
 .screen.active {
-    display: flex; /* Показываем только активный экран */
+    display: flex; /* Показываем активный экран */
 }
+
+/* Красивые кастомные кнопки */
 button {
-    padding: 12px 24px;
-    background: #ff4d6d;
+    /* Градиент кнопок в тон фону, но чуть сочнее */
+    background: linear-gradient(90deg, #f26473, #e54b5d);
     color: white;
     border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 50px; /* Идеально круглые края */
+    padding: 15px 32px;
+    font-weight: bold;
     font-size: 16px;
+    letter-spacing: 0.5px;
+    /* Мягкая тень кнопки */
+    box-shadow: 0 6px 15px rgba(242, 100, 115, 0.3);
+    transition: all 0.3s ease; /* Плавность анимации */
+    cursor: pointer;
 }
+
+/* Эффект при нажатии на телефоне / наведении мышки */
+button:active {
+    transform: scale(0.95); /* Кнопка слегка сжимается под пальцем */
+    background: linear-gradient(90deg, #f48c96, #f26473);
+    box-shadow: 0 4px 10px rgba(242, 100, 115, 0.4);
+}
+
+/* Стильный дизайн для поля ввода (input) */
 input {
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    padding: 14px 20px;
+    font-size: 16px;
+    color: white; /* Текст, который пишет девушка, будет белым */
+    background: rgba(255, 255, 255, 0.2); /* Прозрачно-белая подложка */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Аккуратная рамка */
+    border-radius: 50px; /* Круглые края в тон кнопкам */
+    outline: none; /* Убираем дефолтную обводку браузера при клике */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Стиль текста-подсказки (placeholder) внутри инпута */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый текст */
+    font-style: italic;
+}
+
+/* Эффект, когда девушка нажимает на поле ввода, чтобы писать */
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff; /* Рамка становится чисто белой */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Появляется мягкое белое свечение */
 }

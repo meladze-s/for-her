@@ -12,23 +12,57 @@
     <!-- Экран 1: Логин -->
     <div id="screen-login" class="screen active">
         <h2>Привет! Введи кодовое слово:</h2>
-        <input type="text" id="password-input" placeholder="Например, дата знакомства...">
+        <input type="text" id="password-input" placeholder="Например, твое прозвище...">
         <button onclick="checkPassword()">Войти</button>
     </div>
 
-    <!-- Экран 2: Главное меню -->
+    <!-- Экран 2: Главная страница (Home) -->
     <div id="screen-menu" class="screen">
-        <h2>Главное меню</h2>
-        <button onclick="showScreen('screen-quiz')">🎮 Играть в Квиз</button>
-        <button onclick="alert('Тут будут твои комплименты!')">❤️ Комплименты</button>
+        <div class="profile-header">
+            <h2>Для моей любимой Сони ❤️</h2>
+            <p>Выбери то, что тебе интересно сегодня:</p>
+        </div>
+
+        <!-- Сетка с кнопками-плитками -->
+        <div class="menu-grid">
+            <button class="grid-item" onclick="showScreen('screen-quiz')">
+                <span class="grid-icon">🎮</span>
+                <span class="grid-text">Мини-Квиз</span>
+            </button>
+
+            <button class="grid-item" onclick="showScreen('screen-compliments')">
+                <span class="grid-icon">✨</span>
+                <span class="grid-text">Комплименты</span>
+            </button>
+
+            <button class="grid-item" onclick="showScreen('screen-timeline')">
+                <span class="grid-icon">📅</span>
+                <span class="grid-text">Наша история</span>
+            </button>
+
+            <button class="grid-item" onclick="showScreen('screen-reasons')">
+                <span class="grid-icon">💖</span>
+                <span class="grid-text">100 причин</span>
+            </button>
+
+            <button class="grid-item" onclick="showScreen('screen-gallery')">
+                <span class="grid-icon">📸</span>
+                <span class="grid-text">Наши фото</span>
+            </button>
+
+            <button class="grid-item" onclick="showScreen('screen-wishes')">
+                <span class="grid-icon">💌</span>
+                <span class="grid-text">Загадать желание</span>
+            </button>
+        </div>
     </div>
 
     <!-- Экран 3: Мини-игра -->
     <div id="screen-quiz" class="screen">
         <h2>Мини-Квиз</h2>
-        <p>Где было наше первое свидание?</p>
-        <button onclick="quizAnswer(true)">В кафе</button>
-        <button onclick="quizAnswer(false)">В парке</button>
+        <p>Кто из девочек умнее всех?</p>
+        <button onclick="quizAnswer(true)">Софья</button>
+        <button onclick="quizAnswer(false)">Остальные</button>
         <button class="back-btn" onclick="showScreen('screen-menu')">⬅️ Назад</button>
     </div>
 

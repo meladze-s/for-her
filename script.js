@@ -9,7 +9,7 @@ function showScreen(screenId) {
 
 function checkPassword() {
     const input = document.getElementById('password-input').value;
-    if (input.toLowerCase() === '123') { // Замените '123' на ваше кодовое слово
+    if (input.toLowerCase() === 'соня пупс') {
         showScreen('screen-menu');
     } else {
         alert('Неверно, попробуй еще раз! ❤️');
@@ -18,7 +18,7 @@ function checkPassword() {
 
 function quizAnswer(isCorrect) {
     if (isCorrect) {
-        alert('Правильно! Держи комплимент: Ты самая лучшая! 🥰');
+        alert('Правильно!: Ты самая лучшая! 🥰');
         showScreen('screen-menu');
     } else {
         alert('Неа, вспоминай лучше! 😉');
