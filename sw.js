@@ -1,4 +1,4 @@
-const CACHE_NAME = 'love-app-v2';
+const CACHE_NAME = 'love-app-v1';
 const ASSETS = ['index.html', 'style.css', 'script.js', 'manifest.json', 'icon.png'];
 
 self.addEventListener('install', e => {
