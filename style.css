@@ -82,3 +82,46 @@ input:focus {
     border-color: #ffffff; /* Рамка становится чисто белой */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Появляется мягкое белое свечение */
 }
+/* Стили для сетки меню на главной странице */
+.profile-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+}
+.profile-header p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.grid-icon {
+    font-size: 28px;
+}
+.grid-text {
+    font-size: 13px;
+    font-weight: 600;
+}
+.grid-item:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+}
+
